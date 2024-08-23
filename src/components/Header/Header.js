@@ -14,7 +14,11 @@ function Header({ theme, className, ...delegated }) {
       <Logo />
 
       <div className={styles.actions}>
-        <button className={styles.action}>
+        {/*
+          Turn the <button> into an <a>, so we can link
+          to the new `/rss.xml` route.
+        */}
+        <a href="/rss.xml" className={styles.action}>
           <Rss
             size="1.5rem"
             style={{
@@ -23,7 +27,7 @@ function Header({ theme, className, ...delegated }) {
             }}
           />
           <VisuallyHidden>View RSS feed</VisuallyHidden>
-        </button>
+        </a>
         <DarkLightToggle className={styles.action} initialTheme={theme} />
       </div>
     </header>
